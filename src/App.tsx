@@ -11,17 +11,19 @@ import {
 } from "./Components/index";
 
 function App() {
-  <BrowserRouter>
-    <Box sx={{ bgcolor: "#000" }}>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Feed />} />
-        <Route path="/video/:id" element={<VideoDetail />} />
-        <Route path="/canal/:id" element={<ChannelDetail />} />
-        <Route path="/search/:searchTerm" element={<SearchFeed />} />
-      </Routes>
-    </Box>
-  </BrowserRouter>;
+  return (
+    <BrowserRouter>
+      <Box sx={{ bgcolor: "#000" }}>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Feed />} />
+          <Route path="/video/:id" element={<VideoDetail />} />
+          <Route path="/canal/:id" element={<ChannelDetail />} />
+          <Route path="/search/:searchTerm" element={<SearchFeed />} />
+        </Routes>
+      </Box>
+    </BrowserRouter>
+  );
 }
 
 export default App;
