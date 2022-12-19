@@ -22,6 +22,13 @@ const Feed = () => {
           Copyright 2022
         </Typography>
       </Box>
+
+        <Box>
+          <Typography>
+            <span style={{color:"#f31503"}}>videos</span>
+          </Typography>
+        </Box>
+
     </Stack>
   );
 };
