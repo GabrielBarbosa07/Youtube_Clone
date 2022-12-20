@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Stack, Box, Typography } from "@mui/material";
 import SideBar from "../SideBar/SideBar";
+import Videos from "../Videos/Videos";
 
 const Feed = () => {
   return (
@@ -23,12 +24,19 @@ const Feed = () => {
         </Typography>
       </Box>
 
-        <Box>
-          <Typography>
-            <span style={{color:"#f31503"}}>videos</span>
-          </Typography>
-        </Box>
+      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={2}
+          sx={{ color: "#fff" }}
+        >
+          Novos
+          <span style={{ color: "#f31503" }}> videos</span>
+        </Typography>
 
+        <Videos/>
+      </Box>
     </Stack>
   );
 };

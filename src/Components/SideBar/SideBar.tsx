@@ -2,7 +2,7 @@ import { Stack } from "@mui/material";
 
 import { categories } from "../../Utils/constants";
 
-const selectedCategory = "Gym";
+const selectedCategory = "New";
 
 const SideBar = () => {
   return (
