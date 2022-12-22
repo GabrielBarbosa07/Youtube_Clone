@@ -2,7 +2,7 @@ import { Stack } from "@mui/material";
 
 import { categories } from "../../Utils/constants";
 
-const SideBar = ({selectedCategory, setSelectedCategory}:any) => {
+const SideBar = ({ selectedCategory, setSelectedCategory }: any) => {
   return (
     <Stack
       direction="row"
@@ -23,14 +23,14 @@ const SideBar = ({selectedCategory, setSelectedCategory}:any) => {
           }}
           key={category.name}
         >
-          {/* Change the icon path */}
           <span
+            className="img"
             style={{
               color: category.name === selectedCategory ? "#fff" : "red",
               marginRight: "15px",
             }}
           >
-            {"<>"}
+            <img src={category.icon} alt="" />
           </span>
           <span
             style={{

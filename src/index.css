@@ -50,16 +50,26 @@ a {
   text-transform: capitalize;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   cursor: pointer;
   background: transparent;
   outline: none;
   border: none;
+  gap: 1rem;
 
   padding: 7px 15px;
   margin: 10px 0px;
   border-radius: 20px;
   transition: all 0.3s ease;
+}
+
+.category-btn .img {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.category-btn .img img {
+  width: 100%;
 }
 
 @media screen and (max-width: 900px) {

@@ -1,42 +1,43 @@
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import HomeIcon from '@mui/icons-material/Home';
-import CodeIcon from '@mui/icons-material/Code';
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import LiveTvIcon from '@mui/icons-material/LiveTv';
-import SchoolIcon from '@mui/icons-material/School';
-import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import GraphicEqIcon from '@mui/icons-material/GraphicEq';
-import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
+import HomeIcon from '/src/assets/coding.png';
+import CodeIcon from '/src/assets/coding.png';
+import MusicNoteIcon from '/src/assets/music.png';
+import SchoolIcon from '/src/assets/education.png';
+import PodcastIcon from '/src/assets/podcast.png';
+import MoviesIcon from '/src/assets/movies.png';
+import GamesIcon from '/src/assets/games.png';
+import LiveIcon from '/src/assets/live.png';
+import SportIcon from '/src/assets/sport.png';
+import FashionIcon from '/src/assets/fashion.png';
+import BeautyIcon from '/src/assets/beauty.png';
+import ComedyIcon from '/src/assets/comedy.png';
+import CryptoIcon from '/src/assets/crypto.png';
+
 
 export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
 
 export const categories = [
-    { name: 'New', icon: HomeIcon, },
+    { name: 'Novos', icon: HomeIcon, },
     { name: 'JS Mastery', icon: CodeIcon, },
-    { name: 'Coding', icon: CodeIcon, },
+    { name: 'Codando', icon: CodeIcon, },
     { name: 'ReactJS', icon: CodeIcon, },
     { name: 'NextJS', icon: CodeIcon, },
-    { name: 'Music', icon: MusicNoteIcon },
-    { name: 'Education', icon: SchoolIcon, },
-    { name: 'Podcast', icon: GraphicEqIcon, },
-    { name: 'Movie', icon: OndemandVideoIcon, },
-    { name: 'Gaming', icon: SportsEsportsIcon, },
-    { name: 'Live', icon: LiveTvIcon, },
-    { name: 'Sport', icon: FitnessCenterIcon, },
-    { name: 'Fashion', icon: CheckroomIcon, },
-    { name: 'Beauty', icon: FaceRetouchingNaturalIcon, },
-    { name: 'Comedy', icon: TheaterComedyIcon, },
-    { name: 'Gym', icon: FitnessCenterIcon, },
-    { name: 'Crypto', icon: DeveloperModeIcon, },
+    { name: 'Musica', icon: MusicNoteIcon },
+    { name: 'Educação', icon: SchoolIcon, },
+    { name: 'Podcast', icon: PodcastIcon, },
+    { name: 'Filmes', icon: MoviesIcon, },
+    { name: 'Games', icon: GamesIcon, },
+    { name: 'Live', icon: LiveIcon, },
+    { name: 'Esportes', icon: SportIcon, },
+    { name: 'Fashion', icon: FashionIcon, },
+    { name: 'Beleza', icon: BeautyIcon, },
+    { name: 'Comedia', icon: ComedyIcon, },
+    { name: 'Academia', icon: SportIcon, },
+    { name: 'Crypto', icon: CryptoIcon, },
 ];
 
-// export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
-// export const demoChannelUrl = '/channel/UCmXmlB4-HJytD7wek0Uo97A';
-// export const demoVideoUrl = '/video/GDa8kZLNhJ4';
-// export const demoChannelTitle = 'JavaScript Mastery';
-// export const demoVideoTitle = 'Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI';
-// export const demoProfilePicture = 'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
+export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
+export const demoChannelUrl = '/channel/UCmXmlB4-HJytD7wek0Uo97A';
+export const demoVideoUrl = '/video/GDa8kZLNhJ4';
+export const demoChannelTitle = 'JavaScript Mastery';
+export const demoVideoTitle = 'Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI';
+export const demoProfilePicture = 'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
