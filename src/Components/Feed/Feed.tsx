@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
 import { fetchFromAPI } from "../../Utils/fetchFromAPI";
@@ -12,7 +12,8 @@ const Feed = () => {
     setVideos(null);
 
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      setVideos(data.items)
+      // setVideos(data.items)
+      console.log(data.json())
     );
   }, [selectedCategory]);
 

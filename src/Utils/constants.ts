@@ -1,4 +1,3 @@
-import HomeIcon from '/src/assets/coding.png';
 import CodeIcon from '/src/assets/coding.png';
 import MusicNoteIcon from '/src/assets/music.png';
 import SchoolIcon from '/src/assets/education.png';
@@ -12,11 +11,10 @@ import BeautyIcon from '/src/assets/beauty.png';
 import ComedyIcon from '/src/assets/comedy.png';
 import CryptoIcon from '/src/assets/crypto.png';
 
-
 export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
 
 export const categories = [
-    { name: 'Novos', icon: HomeIcon, },
+    { name: 'Novos', icon: CodeIcon, },
     { name: 'JS Mastery', icon: CodeIcon, },
     { name: 'Codando', icon: CodeIcon, },
     { name: 'ReactJS', icon: CodeIcon, },
