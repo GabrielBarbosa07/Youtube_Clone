@@ -10,14 +10,14 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 //   demoChannelTitle,
 // } from "../../Utils/constants";
 
-// //As props sao baseadas na api do rapidAPI, no momento n está funcionando, entao irei deixar comentado, até encontrar outra forma de acessar api do yt 
+// As props sao baseadas na api do rapidAPI, no momento n está funcionando, entao irei deixar comentado, até encontrar outra forma de acessar api do yt 
 
-// // const VideoCard = ({
-// //   video: {
-// //     id: { videoId },
-// //     snippet,
-// //   },
-// // }) => (
+// const VideoCard = ({
+//   video: {
+//     id: { videoId },
+//     snippet,
+//   },
+// }) => (
 //   <Card
 //     sx={{
 //       width: { xs: "100%", sm: "358px", md: "320px" },
@@ -26,11 +26,12 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 //     }}
 //   >
 //     <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
-//       {/* <CardMedia
+//       <CardMedia
+//       component="img"
 //         image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
 //         alt={snippet?.title}
 //         sx={{ width: { xs: "100%", sm: "358px" }, height: 180 }}
-//       /> */}
+//       />
 //     </Link>
 //     <CardContent sx={{ backgroundColor: "#1E1E1E", height: "106px" }}>
 //       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
