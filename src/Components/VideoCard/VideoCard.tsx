@@ -10,12 +10,7 @@ import {
   demoChannelTitle,
 } from "../../Utils/constants";
 
-const VideoCard = ({
-  video: {
-    id: { videoId },
-    snippet,
-  },
-}) => (
+const VideoCard = ({ video }: any) => (
   <Card
     sx={{
       width: { xs: "100%", sm: "358px", md: "320px" },
@@ -23,27 +18,27 @@ const VideoCard = ({
       borderRadius: 0,
     }}
   >
-    <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
+    <Link to={video.videoId ? `/video/${video.videoId}` : `/video/cV2gBU6hKfY`}>
       <CardMedia
         component="img"
-        image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
-        alt={snippet?.title}
+        image={video.snippet?.thumbnails?.high?.url || demoThumbnailUrl}
+        alt={video.snippet?.title}
         sx={{ width: { xs: "100%", sm: "358px" }, height: 180 }}
       />
     </Link>
     <CardContent sx={{ backgroundColor: "#1E1E1E", height: "106px" }}>
-      <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+      <Link to={video.videoId ? `/video/${video.videoId}` : demoVideoUrl}>
         <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-          {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+          {video.snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
         </Typography>
       </Link>
       <Link
         to={
-          snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl
+          video.snippet?.channelId ? `/channel/${video.snippet?.channelId}` : demoChannelUrl
         }
       >
         <Typography variant="subtitle2" color="gray">
-          {snippet?.channelTitle || demoChannelTitle}
+          {video.snippet?.channelTitle || demoChannelTitle}
           <CheckCircleIcon
             sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
           />

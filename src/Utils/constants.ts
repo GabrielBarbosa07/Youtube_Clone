@@ -15,7 +15,7 @@ export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
 
 export const categories = [
     { name: 'Novos', icon: CodeIcon, },
-    { name: 'JS Mastery', icon: CodeIcon, },
+    { name: 'JS', icon: CodeIcon, },
     { name: 'Codando', icon: CodeIcon, },
     { name: 'ReactJS', icon: CodeIcon, },
     { name: 'NextJS', icon: CodeIcon, },
