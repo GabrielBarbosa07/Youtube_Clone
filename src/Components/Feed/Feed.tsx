@@ -12,11 +12,10 @@ const Feed = () => {
     setVideos(null);
 
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      // setVideos(data.items)
-      console.log(data.json())
+      setVideos(data.items)
     );
   }, [selectedCategory]);
-
+  console.log(videos);
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
@@ -36,7 +35,7 @@ const Feed = () => {
           variant="body2"
           sx={{ mt: 1.5, color: "#fff" }}
         >
-          Copyright © 2022
+          Copyright © 2022 JSM Media
         </Typography>
       </Box>
 
