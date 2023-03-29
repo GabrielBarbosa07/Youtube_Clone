@@ -5,17 +5,17 @@ import { fetchFromAPI } from "../../Utils/fetchFromAPI";
 import { Videos, SideBar } from "../";
 
 export interface VideosProps {
-  videos?: VideoProps[] | undefined
+  videos?: VideoProps[]
   direction?: string | undefined;
 }
 
 export interface VideoProps {
-  id?: {
+  id: {
     kind: string;
     videoId: string;
   };
-  kind?: string;
-  snippet?: {
+  kind: string;
+  snippet: {
     channelId: string;
     channelTitle: string;
     description: string;
@@ -40,12 +40,12 @@ export interface VideoProps {
       };
     };
   };
-  title?: string;
+  title: string;
 }
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("Novos");
-  const [videos, setVideos] = useState<VideosProps>();
+  const [videos, setVideos] = useState();
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
