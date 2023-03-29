@@ -4,13 +4,50 @@ import { Box, Stack, Typography } from "@mui/material";
 import { fetchFromAPI } from "../../Utils/fetchFromAPI";
 import { Videos, SideBar } from "../";
 
+export interface VideosProps {
+  videos?: VideoProps[] | undefined
+  direction?: string | undefined;
+}
+
+export interface VideoProps {
+  id?: {
+    kind: string;
+    videoId: string;
+  };
+  kind?: string;
+  snippet?: {
+    channelId: string;
+    channelTitle: string;
+    description: string;
+    liveBroadcastContent: string;
+    publishTime: string;
+    publishAt: string;
+    thumbnails: {
+      default: {
+        height: number;
+        url: string;
+        width: number;
+      };
+      high: {
+        height: number;
+        url: string;
+        width: number;
+      };
+      medium: {
+        height: number;
+        url: string;
+        width: number;
+      };
+    };
+  };
+  title?: string;
+}
+
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("Novos");
-  const [videos, setVideos] = useState(null);
+  const [videos, setVideos] = useState<VideosProps>();
 
   useEffect(() => {
-    setVideos(null);
-
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
       setVideos(data.items)
     );
@@ -49,7 +86,7 @@ const Feed = () => {
           {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
         </Typography>
 
-        <Videos videos={videos} />
+        <Videos videos={videos}  />
       </Box>
     </Stack>
   );
