@@ -2,15 +2,7 @@ import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-import {
-  demoThumbnailUrl,
-  demoVideoUrl,
-  demoVideoTitle,
-  demoChannelUrl,
-  demoChannelTitle,
-} from "../../Utils/constants";
-
-const VideoCard = ({ video }: any) => (
+const  VideoCard = ({ video }: any) => (
   <Card
     sx={{
       width: { xs: "100%", sm: "358px", md: "320px" },
@@ -18,27 +10,22 @@ const VideoCard = ({ video }: any) => (
       borderRadius: 0,
     }}
   >
-    <Link to={video.videoId ? `/video/${video.videoId}` : `/video/cV2gBU6hKfY`}>
+    <Link to={video?.id?.videoId}>
       <CardMedia
         component="img"
-        image={video.snippet?.thumbnails?.high?.url || demoThumbnailUrl}
-        alt={video.snippet?.title}
+        image={video?.snippet?.thumbnails?.high?.url}
         sx={{ width: { xs: "100%", sm: "358px" }, height: 180 }}
       />
     </Link>
     <CardContent sx={{ backgroundColor: "#1E1E1E", height: "106px" }}>
-      <Link to={video.videoId ? `/video/${video.videoId}` : demoVideoUrl}>
+      <Link to={video?.id?.videoId}>
         <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-          {video.snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+          {video?.snippet?.title.slice(0, 60)}
         </Typography>
       </Link>
-      <Link
-        to={
-          video.snippet?.channelId ? `/channel/${video.snippet?.channelId}` : demoChannelUrl
-        }
-      >
+      <Link to={`/channel/${video?.snippet?.channelId}`}>
         <Typography variant="subtitle2" color="gray">
-          {video.snippet?.channelTitle || demoChannelTitle}
+          {video?.snippet?.channelTitle}
           <CheckCircleIcon
             sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
           />

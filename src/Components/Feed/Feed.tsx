@@ -5,7 +5,7 @@ import { fetchFromAPI } from "../../Utils/fetchFromAPI";
 import { Videos, SideBar } from "../";
 
 export interface VideosProps {
-  videos?: VideoProps[]
+  videos?: VideoProps[];
   direction?: string | undefined;
 }
 
@@ -44,7 +44,7 @@ export interface VideoProps {
 }
 
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Novos");
+  const [selectedCategory, setSelectedCategory] = useState("Recomendados");
   const [videos, setVideos] = useState();
 
   useEffect(() => {
@@ -52,9 +52,16 @@ const Feed = () => {
       setVideos(data.items)
     );
   }, [selectedCategory]);
-  console.log(videos);
+console.log(videos)
   return (
-    <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+    <Stack
+      sx={{
+        flexDirection: { sx: "column", md: "row" },
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Box
         sx={{
           height: { sx: "auto", md: "92vh" },
@@ -72,7 +79,7 @@ const Feed = () => {
           variant="body2"
           sx={{ mt: 1.5, color: "#fff" }}
         >
-          Copyright © 2022 JSM Media
+          Copyright © 2022
         </Typography>
       </Box>
 
@@ -86,7 +93,7 @@ const Feed = () => {
           {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
         </Typography>
 
-        <Videos videos={videos}  />
+        <Videos videos={videos} />
       </Box>
     </Stack>
   );
