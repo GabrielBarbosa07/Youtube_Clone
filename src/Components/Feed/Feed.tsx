@@ -16,6 +16,7 @@ export interface VideoProps {
   };
   kind: string;
   snippet: {
+    title: string;
     channelId: string;
     channelTitle: string;
     description: string;
@@ -40,7 +41,6 @@ export interface VideoProps {
       };
     };
   };
-  title: string;
 }
 
 const Feed = () => {
@@ -52,7 +52,7 @@ const Feed = () => {
       setVideos(data.items)
     );
   }, [selectedCategory]);
-console.log(videos)
+
   return (
     <Stack
       sx={{
@@ -83,17 +83,28 @@ console.log(videos)
         </Typography>
       </Box>
 
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          mb={2}
-          sx={{ color: "white" }}
-        >
-          {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
-        </Typography>
+      <Box
+        p={2}
+        sx={{
+          overflowY: "auto",
+          height: "90vh",
+          flex: {sx:0,md:1},
+          margin: "0 auto",
+          width: "100%",
+        }}
+      >
+        <Box sx={{ margin: "0 auto" }}>
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            mb={2}
+            sx={{ color: "white" }}
+          >
+            {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
+          </Typography>
 
-        <Videos videos={videos} />
+          <Videos videos={videos} />
+        </Box>
       </Box>
     </Stack>
   );
