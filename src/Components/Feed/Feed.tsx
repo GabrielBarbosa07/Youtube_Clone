@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, Grid } from "@mui/material";
 
 import { fetchFromAPI } from "../../Utils/fetchFromAPI";
 import { Videos, SideBar } from "../";
@@ -54,19 +54,15 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack
-      sx={{
-        flexDirection: { sx: "column", md: "row" },
-        flexWrap: "wrap",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Box
+    <Grid container>
+      <Grid
+        xs
+        md={2}
         sx={{
           height: { sx: "auto", md: "92vh" },
           borderRight: "1px solid #3d3d3d",
-          px: { sx: 0, md: 2 },
+          p: { sx: 0, md: 2 },
+          m: { sx: 0, md: 2 },
         }}
       >
         <SideBar
@@ -77,23 +73,21 @@ const Feed = () => {
         <Typography
           className="copyright"
           variant="body2"
-          sx={{ mt: 1.5, color: "#fff" }}
+          sx={{ mt: 1.5, color: "#fff", display: { sx: "none", lg: "block" } }}
         >
           Copyright © 2022
         </Typography>
-      </Box>
+      </Grid>
 
-      <Box
+      <Grid
+        md
         p={2}
         sx={{
-          overflowY: "auto",
-          height: "90vh",
-          flex: {sx:0,md:1},
           margin: "0 auto",
           width: "100%",
         }}
       >
-        <Box sx={{ margin: "0 auto" }}>
+        <Grid>
           <Typography
             variant="h4"
             fontWeight="bold"
@@ -104,9 +98,9 @@ const Feed = () => {
           </Typography>
 
           <Videos videos={videos} />
-        </Box>
-      </Box>
-    </Stack>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 
