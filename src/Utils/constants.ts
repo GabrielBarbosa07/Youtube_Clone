@@ -14,7 +14,7 @@ import CryptoIcon from '/src/assets/crypto.png';
 export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
 
 export const categories = [
-    { name: 'Recomendados', icon: CodeIcon, },
+    { name: 'Novos', icon: CodeIcon, },
     { name: 'JS', icon: CodeIcon, },
     { name: 'Codando', icon: CodeIcon, },
     { name: 'ReactJS', icon: CodeIcon, },

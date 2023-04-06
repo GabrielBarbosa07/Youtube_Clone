@@ -3,7 +3,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  min-width: 400px;
+  min-width: 951px;
+  width: 100vw;
+  height: 100%;
   background-color: #000;
 }
 
@@ -25,6 +27,10 @@ a {
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+.category-btn{
+  width: 100%;
 }
 
 .category-btn:hover {
@@ -58,7 +64,6 @@ a {
   outline: none;
   border: none;
   gap: 1rem;
-
   padding: 7px 15px;
   margin: 10px 0px;
   border-radius: 20px;
@@ -72,13 +77,14 @@ a {
 
 .category-btn .img img {
   width: 100%;
+  height: 100%;
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .category-btn {
     margin: 10px;
   }
-}
+} */
 
 @media screen and (max-width: 800px) {
   .copyright {

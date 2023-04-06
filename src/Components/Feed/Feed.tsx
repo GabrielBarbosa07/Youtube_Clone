@@ -44,7 +44,7 @@ export interface VideoProps {
 }
 
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Recomendados");
+  const [selectedCategory, setSelectedCategory] = useState("Novos");
   const [videos, setVideos] = useState();
 
   useEffect(() => {
@@ -54,15 +54,15 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Grid container>
+    <Grid container xs={12}>
       <Grid
         xs
-        md={2}
+        sm={2}
         sx={{
+          width: "100%",
           height: { sx: "auto", md: "92vh" },
           borderRight: "1px solid #3d3d3d",
-          p: { sx: 0, md: 2 },
-          m: { sx: 0, md: 2 },
+          m: 2,
         }}
       >
         <SideBar
@@ -73,26 +73,19 @@ const Feed = () => {
         <Typography
           className="copyright"
           variant="body2"
-          sx={{ mt: 1.5, color: "#fff", display: { sx: "none", lg: "block" } }}
+          sx={{ mt: 4, color: "#fff" }}
         >
           Copyright © 2022
         </Typography>
       </Grid>
 
-      <Grid
-        md
-        p={2}
-        sx={{
-          margin: "0 auto",
-          width: "100%",
-        }}
-      >
-        <Grid>
+      <Grid xs={12} sm p={2}>
+        <Grid xs>
           <Typography
             variant="h4"
             fontWeight="bold"
             mb={2}
-            sx={{ color: "white" }}
+            sx={{ color: "white", width: "100%" }}
           >
             {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
           </Typography>
