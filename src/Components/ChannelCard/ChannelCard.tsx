@@ -1,9 +1,9 @@
 import { Box, CardContent, CardMedia, Typography } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Link } from "react-router-dom";
-import { demoProfilePicture } from "../../Utils/constants";
 
-const ChannelCard = ({ video, marginTop }: any) => (
+const ChannelCard = ({ channelDetail, marginTop }: any) => (
+  
   <Box
     sx={{
       boxShadow: "none",
@@ -17,7 +17,7 @@ const ChannelCard = ({ video, marginTop }: any) => (
       marginTop
     }}
   >
-    <Link to={`/channel/${video?.snippet?.channelId}`}>
+    <Link to={`/channel/${channelDetail?.id}`}>
       <CardContent
         sx={{
           display: "flex",
@@ -27,8 +27,9 @@ const ChannelCard = ({ video, marginTop }: any) => (
           color: "#fff",
         }}
       >
+       
         <CardMedia
-          image={video?.snippet?.thumbnails?.high?.url}
+          image={channelDetail?.snippet?.thumbnails?.high?.url}
           sx={{
             borderRadius: "50%",
             height: "180px",
@@ -39,17 +40,17 @@ const ChannelCard = ({ video, marginTop }: any) => (
           }}
         />
         <Typography variant="h6">
-          {video?.snippet?.title}{" "}
+          {channelDetail?.snippet?.title}{" "}
           <CheckCircleIcon
             sx={{ fontSize: "14px", color: "gray", ml: "5px" }}
           />
         </Typography>
-        {video?.statistics?.subscriberCount && (
+        {channelDetail?.statistics?.subscriberCount && (
           <Typography sx={{ fontSize: "15px", fontWeight: 500, color: "gray" }}>
-            {parseInt(video?.statistics?.subscriberCount).toLocaleString(
-              "en-US"
+            {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString(
+              "pt-br"
             )}{" "}
-            Subscribers
+            Inscritos
           </Typography>
         )}
       </CardContent>

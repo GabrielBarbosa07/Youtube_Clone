@@ -1,11 +1,10 @@
 import { Stack, Box } from "@mui/material";
 
-import {  Loader, VideoCard } from "../";
-import { VideoProps } from "../Feed/Feed";
+import { Loader, VideoCard } from "../";
+import { VideoProps, VideosProps } from "../Feed/Feed";
 
 const Videos = ({ videos, direction }: any) => {
   if (!videos?.length) return <Loader />;
-  console.log(videos);
 
   return (
     <Stack

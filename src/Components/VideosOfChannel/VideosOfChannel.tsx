@@ -1,13 +1,16 @@
-import React from 'react'
-import VideoCard from '../VideoCard/VideoCard'
+import { VideoProps } from "../Feed/Feed";
+import VideoCard from "../VideoCard/VideoCard";
 
-const VideosOfChannel = ({video}:any) => {
-
+const VideosOfChannel = ({ videos }: any) => {
+  console.log("videos", videos);
   return (
     <>
-        <VideoCard video={video}/>
+    { videos?.map((video:VideoProps) => {
+      <VideoCard  video={video} />
+    }) }
+  
     </>
-  )
-}
+  );
+};
 
-export default VideosOfChannel
+export default VideosOfChannel;

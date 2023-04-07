@@ -9,6 +9,8 @@ import VideosOfChannel from "../VideosOfChannel/VideosOfChannel";
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState();
   const [videos, setVideos] = useState();
+  console.log("channelDetail", channelDetail);
+
 
   const { id } = useParams();
 
@@ -17,7 +19,6 @@ const ChannelDetail = () => {
       const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
 
       setChannelDetail(data?.items[0]);
-    
 
       const videosData = await fetchFromAPI(
         `search?channelId=${id}&part=snippet%2Cid&order=date`
@@ -42,8 +43,8 @@ const ChannelDetail = () => {
         />
         <ChannelCard channelDetail={channelDetail} marginTop="-93px" />
       </Box>
-      <Box sx={{textAlign:"center" }}>
-        <VideosOfChannel video={channelDetail} />
+      <Box sx={{ textAlign: "center" }}>
+        <VideosOfChannel videos={videos} />
       </Box>
     </Box>
   );
