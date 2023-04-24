@@ -2,60 +2,21 @@ import { useEffect, useState } from "react";
 import { Box, Stack, Typography, Grid } from "@mui/material";
 
 import { fetchFromAPI } from "../../Utils/fetchFromAPI";
-import { Videos, SideBar } from "../";
-
-export interface VideosProps {
-  videos?: VideoProps[];
-  direction?: string | undefined;
-}
-
-export interface VideoProps {
-  id: {
-    kind: string;
-    videoId: string;
-  };
-  kind: string;
-  snippet: {
-    title: string;
-    channelId: string;
-    channelTitle: string;
-    description: string;
-    liveBroadcastContent: string;
-    publishTime: string;
-    publishAt: string;
-    thumbnails: {
-      default: {
-        height: number;
-        url: string;
-        width: number;
-      };
-      high: {
-        height: number;
-        url: string;
-        width: number;
-      };
-      medium: {
-        height: number;
-        url: string;
-        width: number;
-      };
-    };
-  };
-}
+import { Videos, NavBar } from "../";
 
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Novos");
-  const [videos, setVideos] = useState();
+  // const [selectedCategory, setSelectedCategory] = useState("Novos");
+  // const [videos, setVideos] = useState();
 
-  useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      setVideos(data.items)
-    );
-  }, [selectedCategory]);
+  // useEffect(() => {
+  //   fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+  //     setVideos(data.items)
+  //   );
+  // }, [selectedCategory]);
 
   return (
     <Grid container xs={12}>
-      <Grid
+      {/* <Grid
         xs
         sm={2}
         sx={{
@@ -65,11 +26,6 @@ const Feed = () => {
           m: 2,
         }}
       >
-        <SideBar
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-
         <Typography
           className="copyright"
           variant="body2"
@@ -92,7 +48,7 @@ const Feed = () => {
 
           <Videos videos={videos} />
         </Grid>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };

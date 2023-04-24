@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { VideoProps } from "../Feed/Feed";
+import { VideoProps } from "../../Utils/props";
+
 
 const VideoCard = ({ video }: { video: VideoProps }) => (
   <Card

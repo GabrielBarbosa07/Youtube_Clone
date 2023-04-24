@@ -12,7 +12,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }: any) => {
         flexDirection: { sx: "row", lg: "column" },
       }}
     >
-      {categories.map((category) => (
+      {/* {categories.map((category) => (
         <button
           className="category-btn"
           onClick={() => setSelectedCategory(category.name)}
@@ -43,7 +43,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }: any) => {
             {category.name}
           </span>
         </button>
-      ))}
+      ))} */}
     </Stack>
   );
 };

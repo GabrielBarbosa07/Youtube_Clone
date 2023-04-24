@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, CardMedia, Grid } from "@mui/material";
 
-import { Videos, ChannelCard } from "../";
+import { ChannelCard } from "../";
 import { fetchFromAPI } from "../../Utils/fetchFromAPI";
 import VideosOfChannel from "../VideosOfChannel/VideosOfChannel";
 
@@ -10,7 +10,6 @@ const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState();
   const [videos, setVideos] = useState();
   console.log("channelDetail", channelDetail);
-
 
   const { id } = useParams();
 
@@ -30,24 +29,25 @@ const ChannelDetail = () => {
     fetchResults();
   }, [id]);
 
+  const bg = channelDetail?.brandingSettings?.image?.bannerExternalUrl;
+
   return (
-    <Box minHeight="95vh">
-      <Box>
-        <div
-          style={{
-            height: "300px",
-            background:
-              "linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)",
-            zIndex: 10,
-          }}
-        />
-        <ChannelCard channelDetail={channelDetail} marginTop="-93px" />
-      </Box>
-      <Box sx={{ textAlign: "center" }}>
+    <Grid minHeight="85vh" sx={{ minWidth: "100vw" }} justifyContent="center" alignItems="center">
+      <CardMedia
+        image={bg}
+        sx={{
+          minHeight: "300px",
+          zIndex: 10,
+        }}
+      />
+      <ChannelCard channelDetail={channelDetail} marginTop="-93px" />
+
+      <Grid xs justifyContent="center" alignItems="center">
         <VideosOfChannel videos={videos} />
-      </Box>
-    </Box>
+      </Grid>
+    </Grid>
   );
 };
+//parei aqui
 
 export default ChannelDetail;

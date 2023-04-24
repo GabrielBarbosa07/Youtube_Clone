@@ -1,17 +1,18 @@
-import CodeIcon from '/src/assets/coding.png';
-import MusicNoteIcon from '/src/assets/music.png';
-import SchoolIcon from '/src/assets/education.png';
-import PodcastIcon from '/src/assets/podcast.png';
-import MoviesIcon from '/src/assets/movies.png';
-import GamesIcon from '/src/assets/games.png';
-import LiveIcon from '/src/assets/live.png';
-import SportIcon from '/src/assets/sport.png';
-import FashionIcon from '/src/assets/fashion.png';
-import BeautyIcon from '/src/assets/beauty.png';
-import ComedyIcon from '/src/assets/comedy.png';
-import CryptoIcon from '/src/assets/crypto.png';
+import CodeIcon from '@mui/icons-material/Code';;
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import SchoolIcon from '@mui/icons-material/School';
+import PodcastIcon from '@mui/icons-material/Podcasts';
+import MovieIcon from '@mui/icons-material/Movie';
+import VideoGameIcon from '@mui/icons-material/SportsEsports';
+import LiveIcon from '@mui/icons-material/LiveTv';
+import SportIcon from '@mui/icons-material/FitnessCenter';
+import FashionIcon from '@mui/icons-material/Checkroom';
+import BeautyIcon from '@mui/icons-material/Face3';
+import ComedyIcon from '@mui/icons-material/TheaterComedy';
+import CryptoIcon from '@mui/icons-material/CurrencyBitcoin';
 
 export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
+
 
 export const categories = [
     { name: 'Novos', icon: CodeIcon, },
@@ -22,8 +23,8 @@ export const categories = [
     { name: 'Musica', icon: MusicNoteIcon },
     { name: 'Educação', icon: SchoolIcon, },
     { name: 'Podcast', icon: PodcastIcon, },
-    { name: 'Filmes', icon: MoviesIcon, },
-    { name: 'Games', icon: GamesIcon, },
+    { name: 'Filmes', icon: MovieIcon, },
+    { name: 'Games', icon: VideoGameIcon, },
     { name: 'Live', icon: LiveIcon, },
     { name: 'Esportes', icon: SportIcon, },
     { name: 'Fashion', icon: FashionIcon, },
