@@ -24,7 +24,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Videos from "../Videos/Videos";
-import { fetchFromAPI } from "../../Utils/fetchFromAPI";
+import { NavBarContext } from "../../Contexts/NavBarContext";
 
 const drawerWidth = 240;
 
@@ -35,7 +35,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   backgroundColor: "black",
-  color:"#fff",
+  color: "#fff",
   overflowX: "hidden",
 });
 
@@ -45,7 +45,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   backgroundColor: "black",
-  color:"#fff",
+  color: "#fff",
   overflowX: "hidden",
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up("sm")]: {
@@ -104,14 +104,9 @@ const Drawer = styled(MuiDrawer, {
 export default function NavBar() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [selectedCategory, setSelectedCategory] = React.useState("Novos");
-  const [videos, setVideos] = React.useState();
 
-  React.useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      setVideos(data.items)
-    );
-  }, [selectedCategory]);
+  const { setSelectedCategory, selectedCategory } =
+    React.useContext(NavBarContext);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -122,10 +117,10 @@ export default function NavBar() {
   };
 
   return (
-    <Box sx={{ display: "flex", }}>
+    <Box>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{ backgroundColor: "black",  }}>
-        <Toolbar sx={{ display: "flex", }}>
+      <AppBar position="fixed" open={open} sx={{ backgroundColor: "black" }}>
+        <Toolbar sx={{ display: "flex" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -142,26 +137,28 @@ export default function NavBar() {
           <Link to="/">
             <img src={logo} alt="logo" height={45} />
           </Link>
-      
 
-        {/* <SearchBar/> */}
-        
+          {/* <SearchBar/> */}
         </Toolbar>
-
-
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
-              <ChevronRightIcon sx={{color:"white"}} />
+              <ChevronRightIcon sx={{ color: "white" }} />
             ) : (
-              <ChevronLeftIcon sx={{color:"white"}} />
+              <ChevronLeftIcon sx={{ color: "white" }} />
             )}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
+        <List
+          sx={{
+            width: "100%",
+            height: { sx: "auto", md: "92vh" },
+            borderRight: "1px solid #3d3d3d",
+          }}
+        >
           {categories.map((category, index) => (
             <ListItem
               key={index}
@@ -205,25 +202,30 @@ export default function NavBar() {
         <Typography
           className="copyright"
           variant="body2"
-          sx={{ color: "#000", p: "8px" }}
+          sx={{
+            color: "#aaa",
+            p: "8px",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+          }}
         >
-          Copyright © 2022
+          Copyright © 2023
         </Typography>
       </Drawer>
-      <Grid component="main" xs={12} sm p={2}>
+      <Grid>
         <DrawerHeader />
-        <Grid xs>
-          <Typography
+        <Stack sx={{ marginLeft: "8px" }}>
+          {/* <Typography
             variant="h4"
             fontWeight="bold"
             mb={2}
             sx={{ color: "white", width: "100%" }}
           >
             {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
-          </Typography>
+          </Typography> */}
 
-          <Videos videos={videos} />
-        </Grid>
+          {/* <Videos videos={videos} /> */}
+        </Stack>
       </Grid>
     </Box>
   );

@@ -3,9 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  min-width: 951px;
-  width: 100vw;
-  height: 100%;
+  min-width: 452px;
   background-color: #000;
 }
 

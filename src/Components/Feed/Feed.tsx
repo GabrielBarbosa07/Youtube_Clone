@@ -1,31 +1,15 @@
-import { useEffect, useState } from "react";
-import { Box, Stack, Typography, Grid } from "@mui/material";
+import { useContext } from "react";
+import { Typography, Grid } from "@mui/material";
 
-import { fetchFromAPI } from "../../Utils/fetchFromAPI";
-import { Videos, NavBar } from "../";
+import { Videos } from "../";
+import { NavBarContext } from "../../Contexts/NavBarContext";
 
 const Feed = () => {
-  // const [selectedCategory, setSelectedCategory] = useState("Novos");
-  // const [videos, setVideos] = useState();
-
-  // useEffect(() => {
-  //   fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-  //     setVideos(data.items)
-  //   );
-  // }, [selectedCategory]);
+  const { selectedCategory } = useContext(NavBarContext);
 
   return (
-    <Grid container xs={12}>
-      {/* <Grid
-        xs
-        sm={2}
-        sx={{
-          width: "100%",
-          height: { sx: "auto", md: "92vh" },
-          borderRight: "1px solid #3d3d3d",
-          m: 2,
-        }}
-      >
+    <Grid xs={12} >
+      {/* <Grid xs sm={2}>
         <Typography
           className="copyright"
           variant="body2"
@@ -33,22 +17,23 @@ const Feed = () => {
         >
           Copyright © 2022
         </Typography>
-      </Grid>
+      </Grid> */}
 
-      <Grid xs={12} sm p={2}>
-        <Grid xs>
+      <Grid sx={{ marginLeft: "68px" }} xs={12} sm>
+        <Grid xs sx={{padding:"0 20px",alignItems:"center" }}>
           <Typography
             variant="h4"
             fontWeight="bold"
             mb={2}
-            sx={{ color: "white", width: "100%" }}
+            sx={{ color: "white", width: "100%",
+          }}
           >
             {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
           </Typography>
 
-          <Videos videos={videos} />
+          <Videos />
         </Grid>
-      </Grid> */}
+      </Grid>
     </Grid>
   );
 };

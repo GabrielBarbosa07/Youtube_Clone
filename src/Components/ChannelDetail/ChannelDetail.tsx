@@ -9,7 +9,6 @@ import VideosOfChannel from "../VideosOfChannel/VideosOfChannel";
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState();
   const [videos, setVideos] = useState();
-  console.log("channelDetail", channelDetail);
 
   const { id } = useParams();
 
@@ -32,7 +31,7 @@ const ChannelDetail = () => {
   const bg = channelDetail?.brandingSettings?.image?.bannerExternalUrl;
 
   return (
-    <Grid minHeight="85vh" sx={{ minWidth: "100vw" }} justifyContent="center" alignItems="center">
+    <Grid minHeight="85vh" sx={{ minWidth: "100vw", justifyContent:"center" }}>
       <CardMedia
         image={bg}
         sx={{
@@ -42,8 +41,8 @@ const ChannelDetail = () => {
       />
       <ChannelCard channelDetail={channelDetail} marginTop="-93px" />
 
-      <Grid xs justifyContent="center" alignItems="center">
-        <VideosOfChannel videos={videos} />
+      <Grid xs>
+        <VideosOfChannel videos={videos} justifyContent="center" />
       </Grid>
     </Grid>
   );
